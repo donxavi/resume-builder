@@ -1,0 +1,40 @@
+.form-wrap form{
+    padding:30px;
+    background:#f5f5f5;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(139, 79, 79, 0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+.form-wrap .form-control{
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+textarea{
+    resize: none;
+}
+.input-holder{
+    position:relative;
+}
+.input-holder .error small{
+    position: absolute;
+    top: -19px;
+    right:0;
+    background:red;
+    color: #fff;
+    font-size: 12px;
+    padding: 1px 5px;
+}
+.input-holder .error small:after{
+    content:'';
+    position: absolute;
+    bottom: -5px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 6px solid #f00;
+}
+.input-holder .error small{
+    color: #fff;
+}

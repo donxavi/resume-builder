@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <table class="table" *ngIf="usersArr.length > 0 ; else emptyMessage">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of usersArr; index as i">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{user.firstName}} {{user.lastName}}</td>
+                    <td>{{user.email}}</td>
+                    <td><a [routerLink]="['/user', i+1]">View Resume</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              
+        </div>
+    </div>
+</div>
+<ng-template #emptyMessage>
+  <p class="h5 text-center my-5">No resumes are added!</p>
+</ng-template>

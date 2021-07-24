@@ -1,0 +1,131 @@
+<div class="form-wrap my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <form novalidate [formGroup]="resumeForm">
+                    <h1 class="text-center mb-4 h3">Create Your Resume</h1>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-holder">
+                                <input type="text" 
+                                name="fName"
+                                formControlName="firstName"
+                                class="form-control" 
+                                placeholder="First Name">
+                                <div class="error" *ngIf="f.firstName.touched && f.firstName.invalid">
+                                    <small *ngIf="f.firstName.hasError('required')">
+                                        Please Enter Your First Name.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-holder">
+                                <input type="text" 
+                                name="lName"
+                                formControlName="lastName"
+                                class="form-control" 
+                                placeholder="Last Name">
+                                <div class="error" *ngIf="f.lastName.touched && f.lastName.invalid">
+                                    <small *ngIf="f.lastName.hasError('required')">
+                                        Please Enter Your Last Name.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-holder">
+                                <textarea 
+                                name="introduction"
+                                formControlName="introduction"
+                                class="form-control" 
+                                placeholder="Introduction">
+                                </textarea>
+                                <div class="error" *ngIf="f.introduction.touched && f.introduction.invalid">
+                                    <small *ngIf="f.introduction.hasError('required')">
+                                        Please Enter Your Introduction.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-holder">
+                                <input type="text" 
+                                name="email"
+                                formControlName="email"
+                                class="form-control" 
+                                placeholder="Email">
+                                <div class="error" *ngIf="f.email.touched && f.email.invalid">
+                                    <small *ngIf="f.email.hasError('required')">
+                                        Please Enter Your Email.
+                                    </small>
+                                    <small *ngIf="f.email.hasError('pattern')">
+                                        Email is invalid.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-holder">
+                                <input type="text" 
+                                name="phone"
+                                formControlName="phone"
+                                class="form-control" 
+                                placeholder="Phone">
+                                <div class="error" *ngIf="f.phone.touched && f.phone.invalid">
+                                    <small *ngIf="f.phone.hasError('required')">
+                                        Please Enter Your Phone.
+                                    </small>
+                                    <small *ngIf="f.phone.hasError('pattern')">
+                                        Phone number is invalid.
+                                    </small>
+                                    <small *ngIf="f.phone.errors?.minlength && !f.phone.hasError('pattern')">
+                                        Your number is less than 10.
+                                    </small>
+                                    <small *ngIf="f.phone.errors?.maxlength && !f.phone.hasError('pattern')">
+                                        Your number is greater than 10.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-holder">
+                                <input type="text" 
+                                name="experience"
+                                formControlName="experience"
+                                class="form-control" 
+                                placeholder="Experience">
+                                <div class="error" *ngIf="f.experience.touched && f.experience.invalid">
+                                    <small *ngIf="f.experience.hasError('required')">
+                                        Please Enter Your Experience.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-holder">
+                                <input type="text" 
+                                name="achievement"
+                                formControlName="achievement"
+                                class="form-control" 
+                                placeholder="Achievement">
+                                <div class="error" *ngIf="f.achievement.touched && f.achievement.invalid">
+                                    <small *ngIf="f.achievement.hasError('required')">
+                                        Please Enter Your Achievement.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                            <button class="btn btn-lg btn-primary btn-block mt-2" 
+                            type="submit"
+                            [disabled]="resumeForm.invalid"
+                            (click)=createResume()>Create Resume</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

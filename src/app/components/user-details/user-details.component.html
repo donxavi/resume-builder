@@ -1,0 +1,21 @@
+<div class="container" *ngIf="singleUser">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="detail-wrap">
+                <h1 class="text-center h3">User Details</h1>
+                <p><label>First Name:</label>{{singleUser.firstName}}</p>
+                <p><label>Last Name:</label>{{singleUser.lastName}}</p>
+                <p><label>Introduction:</label>{{singleUser.introduction}}</p>
+                <p><label>Email:</label>{{singleUser.email}}</p>
+                <p><label>Phone:</label>{{singleUser.phone}}</p>
+                <p><label>Experience:</label>{{singleUser.experience}}</p>
+                <p><label>Achievements:</label>{{singleUser.achievement}}</p>
+                <div class="btn-wrap">
+                    <a class="btn btn-success back" (click)="delete(userid)">Delete</a>
+                    <a class="btn btn-success back" (click)="goBack()">Go Back</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
